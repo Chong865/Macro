@@ -3,7 +3,7 @@ using Statistics
 using Plots
 run = 19
 a = 1/3
-b = 0.8
+b = 0.80
 z = 1
 function parameter(a,b,v)
     global k_star = (a*b*v)^(1/(1-a))
