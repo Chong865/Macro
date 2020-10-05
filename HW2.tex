@@ -1,0 +1,227 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\title{Adv. Macroeconomics II Problem Set 2 Solution}
+\author{Chong Wang}
+
+\begin{document}
+\maketitle
+\section{Define a competitive equilibrium for this economy}
+A Competitive Equilibrium consists of prices $\{p_{t}, w_{t}, r_{t}\}^{\infty}_{t=0}$ and allocations for the firm $\{k^{d}_{t}, l^{d}_{t}, y_{t}\}^{\infty}_{t=0}$ and the household $\{c_{t}, i_{t}, x_{t+1}, k^{s}_{t}, l^{s}_{t}\}^{\infty}_{t=0}$ such that
+\begin{enumerate}
+  \item Given prices $\{p_{t}, w_{t}, r_{t}\}^{\infty}_{t=0}$, the allocation of the representative firm $\{k^{d}_{t}, l^{d}_{t}, y_{t}\}^{\infty}_{t=0}$ solves:\\
+  
+  \[ \pi = \max\limits_{\{k^{d}_{t}, l^{d}_{t}, y_{t}\}^{\infty}_{t=0}} \sum_{t=0}^{\infty} p_{t}(y_{t}-r_{t}k^{d}_{t}-w_{t}l^{d}_{t}) \]
+  \[ s.t.\quad y_{t} = z(k^{d}_{t})^\alpha(l^{d}_{t})^{1-\alpha}\quad \forall t\geq0\]
+  \[ y_{t}, k^{d}_{t}, l^{d}_{t}\geq0\quad \forall t\geq0\]
+  
+  \item Given prices $\{p_{t}, w_{t}, r_{t}\}^{\infty}_{t=0}$, the allocation of the representative household $\{c_{t}, i_{t}, x_{t+1}, k^{s}_{t}, l^{s}_{t}\}^{\infty}_{t=0}$ solves:
+  
+   \[ \max\limits_{\{c_{t}, i_{t}, x_{t+1}, k^{s}_{t}, l^{s}_{t}\}^{\infty}_{t=0}} \sum_{t=0}^{\infty} \beta_{t}(\frac{(c_{t})^{1-\sigma}}{1-\sigma}-\chi \frac{(l^s_{t})^{1+\eta}}{1+\eta})\]
+  \[ s.t.\quad \sum_{t=0}^{\infty}p_{t}(c_{t}+i_{t}) \leq \sum_{t=0}^{\infty}p_{t}(r_{t}k^{s}_{t} + w_{t}l^{s}_{t}) + \pi\]
+  \[ x_{t+1} = (1-\delta)x_{t}+i_{t} \quad \forall t\geq0\]
+  \[  0\leq l^{s}_{t}\leq1,\quad0\leq k^{s}_{t}\leq x_{t}\quad \forall t\geq0\]
+  \[ c_{t}, x_{t+1}\geq0\quad \forall t\geq0\]
+  \[ k_{0}\quad given\]
+  
+  \item Markets Clear
+  \begin{equation}
+    y_{t} = c_{t} + i_{t} \quad(Goods \:Market\:)
+  \end{equation}
+  \begin{equation}
+  l^{d}_{t} = l^{s}_{t} = l_{t} \quad(Labor \:Market\:)
+  \end{equation}
+  \begin{equation}
+  k^{d}_{t} = k^{s}_{t} =k_{t}\quad(Capital \:Market\:)
+  \end{equation}
+\end{enumerate}
+
+\section{Find the steady state value for $\{c,l,k,r,w,y\}$}
+Firm's problem: take FOC w.r.t $k_{t}$ and $l_{t}$
+    \begin{equation}
+    \begin{split}
+    r_{t} &= z\alpha (k_{t})^{\alpha-1}(l_{t})^{1-\alpha}\\
+    w_{t} &= z(1-\alpha)(k_t)^{\alpha} (l_t)^{-\alpha}\\
+    \pi &= \sum_{t=0}^{\infty} p_{t}(z(k_{t})^\alpha(l_{t})^{1-\alpha}-r_{t}k_{t}-w_{t}l_{t})=0
+    \end{split}
+    \end{equation}
+Household's problem: there is no gains from not fully using capital on $k_t$, so $k_t = x_t \quad \forall t\geq0 $. Then, solve the Lagrange function.
+    \begin{equation}
+    \begin{split}
+    \mathcal{L}(\{c_t,k_t,l_t\}_{t=0}^{\infty},\lambda_t)=&\sum_{t=0}^{\infty} \beta ^t(\frac{c_t^{1-\sigma}}{1-\sigma}-\chi \frac{l_t^{1+\eta}}{1+\eta})\\
+    &+\lambda_t(\sum_{t=0}^{\infty}p_t(zk_t^{\alpha}l_t^{1-\alpha}-c_t-k_{t+1}+(1-\delta)k_t)\\
+    \frac{\partial \mathcal{L}}{\partial c_t} &=\beta^tc_t^{-\sigma}-\lambda_t p_t=0\\
+    \frac{\partial \mathcal{L}}{\partial l_t} &=-\beta^t\chi l_t^{\eta}+\lambda_t p_tz(1-\alpha) k_t^{\alpha}l_t^{-\alpha}=0\\
+    \frac{\partial \mathcal{L}}{\partial k_t}&=\lambda_t p_t(z\alpha k_t^{\alpha -1}l_t^{1-\alpha}+1-\delta)-\lambda_{t-1}p_{t-1}=0\\
+    \frac{\partial \mathcal{L}}{\partial \lambda_t} &= zk_t^{\alpha}l_t^{1-\alpha}-k_{t+1}+(1-\delta)k_t - c_t = 0
+    \end{split}
+    \end{equation}
+ In steady state, $c_t =c, k_t =k, l_t =l$. When we normalize $p_0 =1$, we get:
+ \begin{equation}
+    \begin{split}
+    \lambda_t &= c\\
+    p_t &= \beta^t\\
+    c^{\sigma} l^{\eta}&= z(1-\alpha)k^{\alpha}l^{-\alpha}/\chi\\
+    z\alpha k^{\alpha -1}l^{1-\alpha}&= 1/\beta -1 +\delta\\
+    c&=zk^{\alpha}l^{1-\alpha}-\delta k
+    \end{split}
+    \end{equation}
+ Now, solve for $\frac{k}{l}$ and $\frac{c}{l}$, then use them to solve the steady state variables:
+  \begin{equation}
+    \begin{split}
+    Let\: M &= \frac{k}{l}=\left(\frac{z\alpha \beta}{1-\beta +\beta \delta}\right)^{\frac{1}{1-\alpha}} \\
+    Let\: N &=\frac{c}{l}=z(\frac{k}{l})^{\alpha}-\delta \frac{k}{l}=zM^{\alpha}-\delta M \\
+    c^{\sigma} l^{\eta} &= (lN)^{\sigma}l^{\eta}\\
+    &= z(1-\alpha)(\frac{k}{l})^{\alpha}/\chi\\
+    &\Rightarrow l^{\sigma+\eta} =\frac{z(1-\alpha)M^{\alpha}}{\chi N^{\sigma}}\\ &\Rightarrow l=\left(\frac{z(1-\alpha)M^{\alpha}}{\chi N^{\sigma}}\right)^{\frac{1}{\sigma+\eta}} \quad (*)
+    \end{split}
+    \end{equation}
+With $l$ in steady state, we can solve for the other steady state variables:
+  \begin{equation}
+    \begin{split}
+    k&=Ml\quad (*)\\
+    c&=Nl\quad (*)\\
+    y&=zk^{\alpha}l^{1-\alpha}=zM^{\alpha}l\quad (*)\\
+    r&=\alpha zk^{\alpha-1}l^{1-\alpha}=\alpha zM^{\alpha -1}\quad (*)\\
+    w&=(1-\alpha)zk^{\alpha}l^{-\alpha}=(1-\alpha)zM^{\alpha} \quad (*)
+    \end{split}
+    \end{equation}
+ \section{Pose the planner’s dynamic programming problem. Write down the appropriate
+Bellman equation.}
+The social planner's problem is:
+\begin{equation}
+\begin{split}
+w(k_{0}) &= \max\limits_{\{k_{t}, c_{t}, l_{t}\}^{\infty}_{t=0}} \sum_{t=0}^{\infty} \beta^t(\frac{(c_{t})^{1-\sigma}}{1-\sigma}-\chi \frac{(l^s_{t})^{1+\eta}}{1+\eta}) \\
+    s.t. \quad z(k_t)^{\alpha}(l_t)^{1-\alpha} &= c_t+k_{t+1}-(1-\delta)k_t \quad \forall t\geq0\\
+    c_t &\geq 0, k_t \geq 0, 0 \leq l_t \leq 1 \quad \forall t\geq0\\
+     \quad {k}_{0}\:given
+\end{split}
+\end{equation}
+Then, substitute $c_t$ using $k_t$ and turn it into Bellman equation:
+\begin{equation}
+\begin{split}
+v(k_0) = \max\limits_{\begin{smallmatrix}0\leq k' \leq z(k)^{\alpha}(l)^{1-\alpha}+ (1-\delta)k\\ 0\leq l \leq 1\end{smallmatrix}} \{\frac{(z(k)^{\alpha}(l)^{1-\alpha}+ (1-\delta)k-k')^{1-\sigma}}{1-\sigma}-\chi \frac{(l)^{1+\eta}}{1+\eta}+\beta v(k')\}
+\end{split}
+\end{equation}
+\section{Find $\chi$ such that $l_{ss}$ = 0.4}
+Rewrite the equation $l_{ss}$ for $\chi$
+\begin{equation}
+\begin{split}
+l_{ss}^{\sigma+\eta} =\frac{z(1-\alpha)M^{\alpha}}{\chi N^{\sigma}}\\
+\chi = \frac{z(1-\alpha)M^{\alpha}}{l_{ss}^{\sigma+\eta} N^{\sigma}}
+\end{split}
+\end{equation}
+Plug in $\alpha=1/3,z=1,\delta=2,\eta=1,l_{ss}=0.4$
+\begin{equation}
+\chi = 57.12
+\end{equation}
+\section{Solve the planner’ problem numerically using value function iteration. You must do it using:}
+\subsection{Plain VFI}
+n\_k = 100, Converging Iteration: 266, Time: 176s
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[scale=0.45]{HW2_5a_Value.png}
+  \caption{Approximated Value Function}
+  \label{fig:boat1}
+\end{figure}
+\pagebreak
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[scale=0.45]{HW2_5a_policy.png}
+  \caption{Approximated Policy Function}
+  \label{fig:boat1}
+\end{figure}
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[scale=0.45]{HW2_5a_Euler.png}
+  \caption{Approximated Error($\%$)}
+  \label{fig:boat1}
+\end{figure}
+\subsection{Modified Howard’s Policy Iteration (you must choose the number of policy iterations)}
+n\_k = 500, Converging Iteration: 19, Time: 33s
+\pagebreak
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[scale=0.45]{HW2_5b_value.png}
+  \caption{Approximated Value Function}
+  \label{fig:boat1}
+\end{figure}
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[scale=0.45]{HW2_5b_policy.png}
+  \caption{Approximated Policy Function}
+  \label{fig:boat1}
+\end{figure}
+\pagebreak
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[scale=0.45]{HW2_5b_Euler.png}
+  \caption{Approximated Error($\%$)}
+  \label{fig:boat1}
+\end{figure}
+
+\subsection{MacQueen-Porteus Bounds}
+n\_k = 600, Converging Iteration: 17, Time: 20s
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[scale=0.45]{HW2_5c_value.png}
+  \caption{Approximated Value Function}
+  \label{fig:boat1}
+\end{figure}
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[scale=0.45]{HW2_5c_policy.png}
+  \caption{Approximated Policy Function}
+  \label{fig:boat1}
+\end{figure}
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[scale=0.45]{HW2_5c_Euler.png}
+  \caption{Approximated Error($\%$)}
+  \label{fig:boat1}
+\end{figure}
+\section{Use the solution to the planner’s problem to obtain the steady state value of $\{c, k, r,l,w, y\}$. (\underline{Compare estimation to solved steady state})}
+\subsection{Capital decreases to 80$\%$ of its steady state value}
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[scale=0.45]{HW2_6a_k.png}
+  \caption{SS capital decreases to 80$\%$ }
+  \label{fig:boat1}
+\end{figure}
+\subsection{Productivity increases permanently by 5$\%$}
+\pagebreak
+\begin{figure}[!htbp]
+\centering
+  \includegraphics[scale=0.45]{HW2_6b_z.png}
+  \caption{Productivity increases permanently by 5$\%$ }
+  \label{fig:boat1}
+\end{figure}
+\section{Prove that the mapping used in Howard’s policy iteration algorithm is a contraction.}
+I will prove the contraction by Blackwell's theorem.\\
+\begin{equation}
+\begin{split}
+Tv^{n}(k) = \max\limits_{\begin{smallmatrix}0\leq k' \leq z(k)^{\alpha}(l)^{1-\alpha}+ (1-\delta)k\\ 0\leq l \leq 1\end{smallmatrix}} \{\frac{(z(k)^{\alpha}(l)^{1-\alpha}+ (1-\delta)k-k')^{1-\sigma}}{1-\sigma}-\chi \frac{(l)^{1+\eta}}{1+\eta}+\beta v^n(k')\}
+\end{split}
+\end{equation}
+- First, we assume $\frac{(z(k)^{\alpha}(l)^{1-\alpha}+ (1-\delta)k-k')^{1-\sigma}}{1-\sigma}-\chi \frac{(l)^{1+\eta}}{1+\eta}$ is bounded, so $Tv$ is also bounded.\\
+- Next, consider monotonicity. Suppose $v(k)\leq w(k)$ for all $k$. Let $\overline{g}(k)$be Howard's fixed policy function. 
+\begin{equation}
+\begin{split}
+T^Hv(k) &=  U(\overline{g}(k))+\beta v(\overline{g}(k))\\
+&\leq U(\overline{g}(k))+\beta w(\overline{g}(k))\\
+&= T^Hw(k)
+\end{split}
+\end{equation}
+- Lastly, consider discounting.
+\begin{equation}
+\begin{split}
+T^H(v+a)(k) &=  U(\overline{g}(k))+\beta (v(\overline{g}(k))+a)\\
+&= U(\overline{g}(k))+\beta v(\overline{g}(k))+\beta a\\
+&= T^Hv(k) + \beta a
+\end{split}
+\end{equation}
+The mapping used in Howard's fixed policy function satisfies Blackwell's theorem, therefore it is a contraction mapping.
+
+
+\end{document}
